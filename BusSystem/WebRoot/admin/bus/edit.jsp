@@ -1,0 +1,106 @@
+<%@page import="domain.Bus"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="${pageContext.request.contextPath}/admin/css/Style.css"
+	type="text/css" rel="stylesheet">
+<script language="javascript"
+	src="${pageContext.request.contextPath}/admin/js/public.js"></script>
+<script language="javascript"
+	src="${pageContext.request.contextPath}/admin/js/check.js"></script>
+
+</HEAD>
+
+	<form action="${pageContext.request.contextPath }/updateBusServlet " method="post">
+		<table cellSpacing="1" cellPadding="5" width="100%" align="center"
+			bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
+			<tr>
+				<td class="ta_01" align="center" bgColor="#afd1f3" colSpan="4"
+					height="26"><strong><STRONG>编辑汽车信息</STRONG> </strong></td>
+			</tr>
+
+
+			<tr>
+				<td>
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tr>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+								汽车编号：</td>
+							<td class="ta_01" bgColor="#ffffff"><input type="text"
+								name="busNO" size="15" value="${bus.busNO }" id="Form1_userName" class="bg" readonly="readonly" />
+							</td>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+								汽车类型：</td>
+							<td class="ta_01" bgColor="#ffffff"><input type="text"
+								name="bustype" size="15" value="${bus.bustype }" id="Form1_userName" class="bg" />
+							</td>
+						</tr>
+						<tr>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+								购买时间：</td>
+							<td class="ta_01" bgColor="#ffffff"><input type="date"
+								name="buydate" value="${bus.buydate }" />
+							</td>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+								使用时间：</td>
+							<td class="ta_01" bgColor="#ffffff"><input type="date"
+								name="usedate" value="${bus.usedate }" />
+							</td>
+						</tr>
+						<tr>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+								核定载客人数：</td>
+							<td class="ta_01" bgColor="#ffffff"><input type="text"
+								name="seatnum" size="15" value="${bus.seatnum }" id="Form1_userName" class="bg" />
+							</td>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+									是否有TV：</td>
+								<td class="ta_01" bgColor="#ffffff">
+									<select name="TV">
+										<option value="${bus.TV }">----请选择----</option>
+										<option value="是">是</option>
+										<option value="否">否</option>
+									</select>
+								</td>
+						</tr>
+
+						<tr>
+							<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
+									是否有空调：</td>
+								<td class="ta_01" bgColor="#ffffff">
+									<select name="aircondition">
+										<option value="${bus.aircondition }">----请选择----</option>
+										<option value="是">是</option>
+										<option value="否">否</option>
+									</select>
+								</td>
+						</tr>
+						<TR>
+							<TD class="ta_01" align="center" bgColor="#f5fafe">备注：</TD>
+							<TD class="ta_01" bgColor="#ffffff" colSpan="3"><textarea
+									name="busmemo" cols="30" rows="3" style="WIDTH: 96%">${bus.busmemo }</textarea>
+							</TD>
+						</TR>
+						<TR>
+							<td align="center" colSpan="4" class="sep1"><img
+								src="${pageContext.request.contextPath}/admin/images/shim.gif">
+							</td>
+						</TR>
+
+
+						<tr>
+							<td class="ta_01" style="WIDTH: 100%" align="center" bgColor="#f5fafe" colSpan="4">
+								<input type="submit" class="button_ok" value="确定"> 
+								<FONT face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+								<input type="reset" value="重置" class="button_cancel"> 
+								<FONT face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+								<INPUT class="button_ok" type="button" onclick="history.go(-1)" value="返回" /> 	
+								<!-- <span id="Label1"> </span></td> -->
+						</tr>
+				</table>
+	</form>
+</body>
+</HTML>
